@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: '"Courier New"', '"IBM Plex Mono"', '"Space Mono"', monospace;
+  background-color: #000000;
+  color: #FFFFFF;
+  letter-spacing: 0.05em; /* Slightly increased letter spacing */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+}
+
+/* Optional: CRT effect (scan lines) */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: repeating-linear-gradient(to bottom, transparent 0, rgba(255, 255, 255, 0.05) 0.5px, transparent 1px);
+  z-index: 1000;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 0%; /* Black */
+    --foreground: 0 0% 100%; /* White */
+    --card: 0 0% 0%; /* Black */
+    --card-foreground: 0 0% 100%; /* White */
+    --popover: 0 0% 0%; /* Black */
+    --popover-foreground: 0 0% 100%; /* White */
+    --primary: 0 0% 100%; /* White */
+    --primary-foreground: 0 0% 0%; /* Black */
+    --secondary: 0 0% 100%; /* White */
+    --secondary-foreground: 0 0% 0%; /* Black */
+    --muted: 0 0% 66%; /* Gray */
+    --muted-foreground: 0 0% 100%; /* White */
+    --accent: 0 0% 66%; /* Gray */
+    --accent-foreground: 0 0% 0%; /* Black */
+    --destructive: 0 100% 50%; /* Red for errors */
+    --destructive-foreground: 0 0% 100%; /* White */
+    --border: 0 0% 20%; /* Dark Gray */
+    --input: 0 0% 20%; /* Dark Gray */
+    --ring: 0 0% 66%; /* Gray */
+    /* Chart colors can be adjusted for retro style if needed */
+    --chart-1: 0 0% 100%;
+    --chart-2: 0 0% 66%;
+    --chart-3: 0 0% 33%;
+    --chart-4: 0 0% 100%;
+    --chart-5: 0 0% 66%;
+    --radius: 0.25rem; /* Slightly smaller radius for a sharper look */
+  }
+  .dark {
+    --background: 0 0% 0%; /* Black */
+    --foreground: 0 0% 100%; /* White */
+    --card: 0 0% 0%; /* Black */
+    --card-foreground: 0 0% 100%; /* White */
+    --popover: 0 0% 0%; /* Black */
+    --popover-foreground: 0 0% 100%; /* White */
+    --primary: 0 0% 100%; /* White */
+    --primary-foreground: 0 0% 0%; /* Black */
+    --secondary: 0 0% 100%; /* White */
+    --secondary-foreground: 0 0% 0%; /* Black */
+    --muted: 0 0% 66%; /* Gray */
+    --muted-foreground: 0 0% 100%; /* White */
+    --accent: 0 0% 66%; /* Gray */
+    --accent-foreground: 0 0% 0%; /* Black */
+    --destructive: 0 100% 50%; /* Red for errors */
+    --destructive-foreground: 0 0% 100%; /* White */
+    --border: 0 0% 20%; /* Dark Gray */
+    --input: 0 0% 20%; /* Dark Gray */
+    --ring: 0 0% 66%; /* Gray */
+    /* Chart colors can be adjusted for retro style if needed */
+    --chart-1: 0 0% 100%;
+    --chart-2: 0 0% 66%;
+    --chart-3: 0 0% 33%;
+    --chart-4: 0 0% 100%;
+    --chart-5: 0 0% 66%;
+    --radius: 0.25rem; /* Slightly smaller radius for a sharper look */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Button styles */
+  button,
+  .button {
+    background-color: transparent;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    transition: all 0.2s ease-in-out;
+  }
+
+  button:hover,
+  .button:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+  }
+
+  /* Card styles */
+  .card {
+    background-color: #000000;
+    border: 1px solid #AAAAAA;
+  }
+
+  /* No shadows or gradients */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    background-image: none !important;
+  }
+}
